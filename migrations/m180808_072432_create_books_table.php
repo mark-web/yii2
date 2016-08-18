@@ -29,13 +29,13 @@ class m180808_072432_create_books_table extends Migration
             'name'        => $this->string(255)->notNull(),
             'description' => $this->string(255)->notNull(),
             'location_id' => $this->integer(10)->defaultValue(0),
-            'bookStatus'  => $this->integer(10)->defaultValue(1),
+            'book_status'  => $this->integer(10)->defaultValue(1),
             'create_date' => $this->dateTime()->notNull(),
             'uprate_date' => $this->dateTime()->null()
         ], $tableOptions);
 
         //создание индекса
-        //$this->createIndex('idx-bookStatus', 'books', 'bookStatus');
+        //$this->createIndex('idx-book_status', 'books', 'book_status');
 
         // генерация строки таблицы и заполнение её
         $rows = $this->generateRows(35);
@@ -66,7 +66,7 @@ class m180808_072432_create_books_table extends Migration
                 'name'        => " book name " . $j,
                 'description' => " book description " . $j,
                 'location_id' =>  $j%3,
-                'bookStatus'  =>  1,
+                'book_status'  =>  1,
                 'create_date' => $dt->format('Y-m-d H:i:s')
             ];
             $dt = $dt->modify('+1 second');

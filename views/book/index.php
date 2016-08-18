@@ -29,18 +29,18 @@ $this->title = 'Информация про книги';
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="contain">Author</label>
+                                        <label for="contain">Автор</label>
                                         <input class="form-control" type="text" />
                                     </div>
                                     <div class="form-group">
-                                        <label for="contain">Contains the words</label>
+                                        <label for="contain">Содержит слова</label>
                                         <input class="form-control" type="text" />
                                     </div>
                                     <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
                                 </form>
                             </div>
                         </div>
-                        <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                        <button type="button" class="btn btn-primary" id="quick_search_btn"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
                     </div>
                 </div>
             </div>
@@ -56,7 +56,7 @@ $this->title = 'Информация про книги';
         'name',
         'description',
         'location_id',
-        'bookStatus',
+        'book_status',
         'create_date',
     ],
 ]); ?>
