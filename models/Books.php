@@ -19,11 +19,14 @@ class Books extends \yii\db\ActiveRecord
      */
     public function rules()
     {
-        return [
+        Yii::$app->language = 'ru-RU';
+
+        $rules = [
             ['name', 'match', 'pattern' => '/^[a-z0-9]{3,16}$/i',
-                'message' => 'Название книги должно содержать только цифры и буквы латинского алфавита.' .
-                    ' Его длина должна составлять 3 - 16 символов.'],
+                'message' => 'Название книги должно содержать только цифры и буквы латинского алфавита.'],
+            ['name', 'string', 'length' => [3, 18]],
         ];
+        return array_merge(parent::rules(),$rules);
     }
 
     /**

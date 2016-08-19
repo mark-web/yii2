@@ -16,6 +16,11 @@ var appMain = (function() {
             if (pathName == '') {
                 pathName = document.location.pathname.split('/').slice(-2).toString().replace(new RegExp("-",'g'),'').replace(new RegExp(",",'g'),'');
             }
+
+            //for main/home page
+            if (pathName == '') {
+                pathName = 'index';
+            }
             return pathName;
         },
 
@@ -44,13 +49,12 @@ var appMain = (function() {
 
                 var bookNameSearchValue = $("#adv-search").find('input').first().val();
 
-                $.post(SEARCH_BY_BOOK_NAME_URL, {"bookName" :bookNameSearchValue}, function (response) {
+                $.post(SEARCH_BY_BOOK_NAME_URL, {"name" :bookNameSearchValue}, function (response) {
                     if (response.data) {
                         $('#w0').html(getJsonToHtmlTableBooksSearch(response.data));
                     }
                 });
             });
-
         },
     }
 

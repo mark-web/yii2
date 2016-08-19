@@ -71,17 +71,21 @@ class BookController extends Controller {
      * Метод для поиска.
      */
     public function actionSearch() {
+
         Yii::$app->response->format = 'json';
+
+        $post = Yii::$app->request->post();
+
         $model = new Books();
-       // if ($model->load(Yii::$app->request->post())) {
+        $model->load($post);
 
-            $post = Yii::$app->request->post();
+        if ($model->validate()) {
 
-            if (isset($post['bookName'])) {
-
-                return ['data' => $model->getByName($post['bookName'])];
+            //если поиск по названию книги
+            if (isset($post['name'])) {
+                return ['data' => $model->getByName($post['name'])];
             }
-       // }
+        }
 
         return ['data' => false];
     }

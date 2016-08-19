@@ -1,6 +1,9 @@
 <?php
-
-use app\models\Books;
+use yii\helpers\ArrayHelper;
+use app\models\Location;
+use app\models\Author;
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
 use app\assets\SearchFormAsset;
 
 SearchFormAsset::register($this);
@@ -14,32 +17,6 @@ $this->title = 'Информация про книги';
                 <input type="text" class="form-control" placeholder="Поиск по названию книги" />
                 <div class="input-group-btn">
                     <div class="btn-group" role="group">
-                        <div class="dropdown dropdown-lg">
-                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
-                            <div class="dropdown-menu dropdown-menu-right" role="menu">
-                                <form class="form-horizontal" role="form">
-                                    <div class="form-group">
-                                        <label for="filter">Дополнительные фильтры</label>
-                                        <select class="form-control">
-                                            <option value="0" selected>All Snippets</option>
-                                            <option value="1">Featured</option>
-                                            <option value="2">Most popular</option>
-                                            <option value="3">Top rated</option>
-                                            <option value="4">Most commented</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="contain">Автор</label>
-                                        <input class="form-control" type="text" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="contain">Содержит слова</label>
-                                        <input class="form-control" type="text" />
-                                    </div>
-                                    <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-                                </form>
-                            </div>
-                        </div>
                         <button type="button" class="btn btn-primary" id="quick_search_btn"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
                     </div>
                 </div>
