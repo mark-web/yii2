@@ -1,14 +1,10 @@
 Project Version 1.0
 ============================
 -------------------
-- реализован функционал гостевой книги
-    /guest-book/index
 
-- реализован функционал "Учет книг библиотеки"
-    /book/index
-
-- Список пользователей AngularJs /user-console/index
-
+      /guest-book/index             реализован функционал гостевой книги
+      /book/index                   "Учет книг библиотеки"
+      /user-console/index           Список пользователей AngularJs
 
 
 Yii 2 Basic Project Template
