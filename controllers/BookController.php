@@ -29,8 +29,7 @@ class BookController extends Controller {
                 'class' => ContentNegotiator::className(),
                 'formats' => [
                     'text/html' => Response::FORMAT_HTML
-                ],
-                'except' => ['index']
+                ]
             ]
         ];
     }
