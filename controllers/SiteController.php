@@ -93,4 +93,32 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+
+
+    /*
+     * Метод по умолчанию.
+     */
+    public function actionLoginForm() {
+
+        return $this->render('loginForm', []);
+    }
+
+    //форма авторизации
+    public function actionAuthForm(){
+        return $this->render('authForm', []);
+    }
+
+    //форма регистрации
+    public function actionRegisterForm(){
+        return $this->render('registerForm', []);
+    }
+
+
+    //форма регистрации
+    public function actionGetUserData(){
+
+        Yii::$app->response->format = 'json';
+
+        return ['ldap' => 'test'];
+    }
 }

@@ -3,41 +3,16 @@
 namespace app\controllers;
 
 use Yii;
-use yii\web\Controller;
-use yii\web\Response;
-use yii\filters\ContentNegotiator;
+use app\controllers\MainController;
 
-class UserConsoleController extends Controller {
-
-    /**
-     * Поведения
-     *
-     * @return array - Поведения
-     */
-    public function behaviors()
-    {
-        return [
-            'contentNegotiator' => [
-                'class' => ContentNegotiator::className(),
-                'formats' => [
-                    'text/html' => Response::FORMAT_HTML
-                ]
-            ]
-        ];
-    }
+class UserConsoleController extends MainController {
 
     /*
      * Метод по умолчанию.
      */
     public function actionIndex() {
 
-        return $this->render('index', ['data' => '
-            [
-             {"name":"Sergey","surname":"Testov","age":"26"},
-             {"name":"Irina","surname":"Testova","age":"25"},
-             {"name":"Aleks","surname":"Testov","age":"3"}
-           ]'
-        ]);
+        return $this->render('index', []);
     }
 
     /*
@@ -65,7 +40,9 @@ class UserConsoleController extends Controller {
             [
              {"name":"Sergey","surname":"Testov","age":"26"},
              {"name":"Irina","surname":"Testova","age":"25"},
-             {"name":"Aleks","surname":"Testov","age":"3"}
+             {"name":"Aleks","surname":"Testov","age":"3"},
+             {"name":"John","surname":"Testov","age":"12"},
+             {"name":"Angela","surname":"Testova","age":"33"}
            ]';
     }
 }

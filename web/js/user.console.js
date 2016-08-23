@@ -1,7 +1,7 @@
 var app = angular.module('App', []);
 
 
-app.controller('myCtrl', ['$scope','$http', function ($scope,$http)  {
+app.controller('appCtrl', ['$scope','$http', function ($scope,$http)  {
     $scope.new_user = {};
     $scope.currentView = 'userTable';
     $scope.setCurrentView = function(view){
